@@ -98,7 +98,16 @@ namespace FileHandler
             dest = dst;
         if(!dest.string().ends_with('/') || !dest.string().ends_with('\\'))
             dest += "/";
+        
+        if(!fs::exists(dest))
+        {
+            fs::create_directories(dest);
+        }
+
         dest += src.filename();
+
+        if(fs::exists(dest) && !DeleteFile(dest))
+            return false;
 
         if(!fs::copy_file(src, dest))
         {
@@ -126,7 +135,16 @@ namespace FileHandler
             dest = dst;
         if(!dest.string().ends_with('/') || !dest.string().ends_with('\\'))
             dest += "/";
+        
+        if(!fs::exists(dest))
+        {
+            fs::create_directories(dest);
+        }
+        
         dest += src.filename();
+
+        if(fs::exists(dest) && !DeleteFile(dest))
+            return false;
 
         if(!fs::copy_file(src, dest))
         {
@@ -440,13 +458,15 @@ namespace FileHandler
             return false;
 
         fs::path bPath;
-        if(backupPath.has_filename())
+        if(backupPath.has_extension())
         {
             bPath = backupPath.parent_path();
             bPath += "/";
         }
         else
             bPath = backupPath;
+        if(!bPath.string().ends_with('/') || !bPath.string().ends_with('\\'))
+            bPath += "/";
         bPath += path.filename();
 
         if(dontOverride)
