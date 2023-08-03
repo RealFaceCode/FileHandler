@@ -210,3 +210,9 @@ std::string filePath = "data.txt";
     return 0;
 ```
 Please note that this example assumes you have already created the FileHandler.h header file containing the FileHandler namespace and its functions. Also, ensure that you have the necessary permissions to read from and write to the specified file.
+
+## Contributions
+Contributions to the TimeHandler library are welcome. If you encounter any issues or have suggestions for improvements, please feel free to create an issue or submit a pull request on the GitHub repository.
+
+## License
+The TimeHandler library is open-source and distributed under the MIT License. See the LICENSE file for more details.
