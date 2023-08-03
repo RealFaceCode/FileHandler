@@ -1,3 +1,6 @@
+#ifndef FILE_HANDLER_HPP
+#define FILE_HANDLER_HPP
+
 #include <iostream>
 #include <memory>
 #include <fstream>
@@ -538,3 +541,4 @@ namespace FileHandler
         return true;
     }
 }
+#endif // FILE_HANDLER_HPP
