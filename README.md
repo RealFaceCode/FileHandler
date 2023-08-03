@@ -5,7 +5,7 @@ The FileHandler library provides a set of functions for handling file-related op
 ## How to Use
 To use the FileHandler library, follow the steps below:
 
-1. Include the necessary headers in your C++ code:
+1. Include the necessary headers in your C++ code.
 
 2. The library is contained within the FileHandler namespace. You can access its functions using the FileHandler::<function_name> syntax.
 
@@ -167,5 +167,46 @@ int main() {
 
     return 0;
 }
+```
+
+### Backup a file
+```cpp
+std::string filePath = "data.txt";
+    std::string backupFilePath = "data_backup.txt";
+
+    // Create a backup of the file
+    if (FileHandler::CreateBackupFromFile(filePath)) {
+        std::cout << "Backup of the file created successfully." << std::endl;
+    } else {
+        std::cerr << "Failed to create a backup of the file." << std::endl;
+        return 1;
+    }
+
+    // Alternatively, you can specify a custom backup path
+    std::string customBackupPath = "backups/";
+    if (FileHandler::CreateBackupFromFile(filePath, customBackupPath)) {
+        std::cout << "Custom backup of the file created successfully." << std::endl;
+    } else {
+        std::cerr << "Failed to create a custom backup of the file." << std::endl;
+        return 1;
+    }
+
+    // With timestemp
+    if (FileHandler::CreateBackupFromFile(filePath), true) {
+        std::cout << "Backup of the file created successfully." << std::endl;
+    } else {
+        std::cerr << "Failed to create a backup of the file." << std::endl;
+        return 1;
+    }
+
+    std::string customBackupPath = "backups/";
+    if (FileHandler::CreateBackupFromFile(filePath, customBackupPath), true) {
+        std::cout << "Custom backup of the file created successfully." << std::endl;
+    } else {
+        std::cerr << "Failed to create a custom backup of the file." << std::endl;
+        return 1;
+    }
+
+    return 0;
 ```
 Please note that this example assumes you have already created the FileHandler.h header file containing the FileHandler namespace and its functions. Also, ensure that you have the necessary permissions to read from and write to the specified file.
