@@ -38,8 +38,8 @@ To use the FileHandler library, follow the steps below:
 - ```cpp
   bool ReadFromFile(const fs::path& path, std::string& buffer) - Read a string from a file.
   ```
-- ```cpp bool
-  WriteBinaryToFile(const fs::path& path, const std::vector<uint8_t>& buffer, const std::ios_base::openmode openMode = std::ios::binary) - Write binary data (vector of uint8_t) to a file.
+- ```cpp
+  bool WriteBinaryToFile(const fs::path& path, const std::vector<uint8_t>& buffer, const std::ios_base::openmode openMode = std::ios::binary) - Write binary data (vector of uint8_t) to a file.
   ```
 - ```cpp
   bool WriteBinaryToFile(const fs::path& path, const void* buffer, const std::streamsize& streamSize, const std::ios_base::openmode openMode = std::ios::binary) - Write binary data (from a buffer) to a file.
@@ -53,8 +53,8 @@ To use the FileHandler library, follow the steps below:
 - ```cpp
   bool SimpleEncryptFile(const fs::path& inputPath, const fs::path& outputPath, const std::string& key) - Encrypt a file using a simple XOR encryption with a given key.
   ```
-- ```cpp bool
-  SimpleDecryptFile(const fs::path& inputPath, const fs::path& outputPath, const std::string& key) - Decrypt a file encrypted using the SimpleEncryptFile function.
+- ```cpp
+  bool SimpleDecryptFile(const fs::path& inputPath, const fs::path& outputPath, const std::string& key) - Decrypt a file encrypted using the SimpleEncryptFile function.
   ```
 - ```cpp
   bool CompareFiles(const fs::path& firstPath, const fs::path& secondPath) - Compare two files to check if their content is the same.
@@ -65,11 +65,11 @@ To use the FileHandler library, follow the steps below:
 - ```cpp
   bool CreateBackupFromFile(const fs::path& path, const fs::path& backupPath, const bool& dontOverride = false) - Create a backup of a file with a custom backup path.
   ```
-- ```cpp bool
-  GetLinesFromFile(const fs::path& path, std::vector<std::string>& buffer) - Read lines from a file into a vector of strings.
+- ```cpp
+  bool GetLinesFromFile(const fs::path& path, std::vector<std::string>& buffer) - Read lines from a file into a vector of strings.
   ```
-- ```cpp bool
-  GetLineFromFile(const fs::path& path, std::string& buffer, const std::size_t& line) - Read a specific line from a file into a string.
+- ```cpp
+  bool GetLineFromFile(const fs::path& path, std::string& buffer, const std::size_t& line) - Read a specific line from a file into a string.
   ```
 4. Each function provides a return value to indicate the success or failure of the operation. In case of failure, error messages are printed to std::cerr.
 
