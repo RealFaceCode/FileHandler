@@ -2,7 +2,7 @@
 A simple file handler in c++.
 
 ## Features
-- Creation of files and direktories(indirectly)
+- Creation of files and directories(indirectly)
 - Deletion of files
 - Renaming of files
 - File copy/move
